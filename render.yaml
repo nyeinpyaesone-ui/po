@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: po
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: API_TOKEN
+        sync: false
+      - key: OLLAMA_URL
+        sync: false
+      - key: OLLAMA_MODEL
+        value: gemma2:2b
