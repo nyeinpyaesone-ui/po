@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="NarrateClaude Lite task runtime">
+  <title>NarrateClaude Lite</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <div><p class="eyebrow">NARRATECLAUDE</p><h1>Lite Runtime</h1></div>
+      <span id="health" class="status">checking</span>
+    </header>
+    <section class="card composer">
+      <label for="prompt">Task</label>
+      <textarea id="prompt" maxlength="12000" placeholder="Describe a task..."></textarea>
+      <div class="row">
+        <select id="type"><option value="">Auto route</option><option value="general">General</option><option value="code">Code</option><option value="browser">Browser boundary</option></select>
+        <button id="submit">Run task</button>
+      </div>
+      <pre id="result" class="result" hidden></pre>
+    </section>
+    <section class="card">
+      <div class="section-head"><h2>Recent tasks</h2><button id="refresh" class="secondary">Refresh</button></div>
+      <div id="tasks" class="tasks"></div>
+    </section>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
